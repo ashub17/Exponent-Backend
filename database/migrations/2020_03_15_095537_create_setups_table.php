@@ -16,7 +16,7 @@ class CreateSetupsTable extends Migration
         Schema::create('setups', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('email');
-            $table->string('logo');
+            $table->string('logo')->nullable();
             $table->string('phone');
             $table->string('landline');
             $table->string('address');

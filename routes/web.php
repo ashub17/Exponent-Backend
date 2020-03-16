@@ -11,12 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('frontend.index');
-});
-Route::get('admin', function () {
-    return view('backend.index');
-});
-Route::get('setup', function () {
-    return view('backend.insert.setup');
-});
+Route::get('/', 'frontController@index');
+
+Route::get('admin', 'adminController@admin');
+
+Route::get('setups', 'adminController@setups');
+
+Route::post('addSettings','crudController@insertData');
