@@ -7,7 +7,7 @@
 
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    {{-- <link rel="apple-touch-icon" href="apple-touch-icon.png" /> --}}
     <link rel="stylesheet" href="{{ URL::asset('frontend/css/bootstrap.min.css')}}" />
     <link rel="stylesheet" href="{{ URL::asset('frontend/css/bootstrap-theme.min.css')}}" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
@@ -38,12 +38,9 @@
         <nav>
           <ul class="nav navbar-nav">
             <li><a href="#top">Home</a></li>
-            <li><a href="#aboutus">About Us</a></li>
-            <li><a href="#services">Our Services</a></li>
-            <li><a href="#products">Our Products</a></li>
-            <li><a href="#clients">Our Clients</a></li>
-            <li><a href="#partners">Our Partners</a></li>
-            <li><a href="#contact">Contact Us</a></li>
+            @foreach ($cats as $cat)
+              <li><a href="#{{$cat->slug}}">{{$cat->title}}</a></li> 
+            @endforeach
           </ul>
         </nav>
       </div>
@@ -51,7 +48,7 @@
 
     <div class="sidebar-navigation hidde-sm hidden-xs">
       <div class="logo"><a href="#top">
-        <img src="{{ URL::asset('frontend/img/expo_logo-01.png')}}"></a>
+        <img src="{{url('setups')}}/{{$setups->image}}"></a>
       </div>
       <nav>
         <ul>
@@ -62,62 +59,29 @@
               Home
             </a>
           </li>
-          <li>
-            <a href="#aboutus">
-              <span class="rect"></span>
-              <span class="circle"></span>
-              About Us
-            </a>
-          </li>
-          <li>
-            <a href="#services">
-              <span class="rect"></span>
-              <span class="circle"></span>
-              Our Services
-            </a>
-          </li>
-          <li>
-            <a href="#products">
-              <span class="rect"></span>
-              <span class="circle"></span>
-              Our Products
-            </a>
-          </li>
-          <li>
-            <a href="#clients">
-              <span class="rect"></span>
-              <span class="circle"></span>
-              Our Clients
-            </a>
-          </li>
-          <li>
-            <a href="#partners">
-              <span class="rect"></span>
-              <span class="circle"></span>
-              Our Partners
-            </a>
-          </li>
-          <li>
-            <a href="#contact">
-              <span class="rect"></span>
-              <span class="circle"></span>
-              Contact Us
-            </a>
-          </li>
+          @foreach ($cats as $cat)
+            <li>
+              <a href="#{{$cat->slug}}">
+                <span class="rect"></span>
+                <span class="circle"></span>
+                {{$cat->title}}
+              </a>
+            </li>
+          @endforeach
         </ul>
       </nav>
       <ul class="social-icons">
         <li>
-          <a href="https://www.facebook.com/exponentsolutions/"><i class="fa fa-facebook"></i></a>
+          <a href="{{$setups->facebook}}"><i class="fa fa-facebook"></i></a>
         </li>
         <li>
-          <a href="https://www.youtube.com/channel/UCkrAmkaT_9nuxiONmM05Snw"><i class="fa fa-youtube"></i></a>
+          <a href="{{$setups->youtube}}"><i class="fa fa-youtube"></i></a>
         </li>
         <li>
-          <a href="https://www.linkedin.com/company/exponent-solution-limited"><i class="fa fa-linkedin"></i></a>
+          <a href="{{$setups->linkedin}}"><i class="fa fa-linkedin"></i></a>
         </li>
         <li>
-          <a href="mailto: info@exponentsolution.com"><i class="fa fa-envelope"></i></a>
+          <a href="mailto: {{$setups->email}}"><i class="fa fa-envelope"></i></a>
         </li>
       </ul>
     </div>
@@ -126,7 +90,7 @@
       <div class="Modern-Slider content-section" id="top">
         <div class="item item-1">
           <div class="img-fill">
-            <div class="image"></div>
+            <div class="image" style="background-image: url('{{ URL::asset('frontend/img/slide_1.jpg')}}');"></div>
             <div class="info">
               <div>
                 <h1>Application<br />Development</h1>
@@ -139,7 +103,8 @@
         </div>
         <div class="item item-2">
           <div class="img-fill">
-            <div class="image"></div>
+            <div class="image" style="background-image: url('{{ URL::asset('frontend/img/slide_2.jpg')}}');">
+            </div>
             <div class="info">
               <div>
                 <h1>IT<br />Infrustructure</h1>
@@ -152,7 +117,7 @@
         </div>
         <div class="item item-3">
           <div class="img-fill">
-            <div class="image"></div>
+            <div class="image" style="background-image: url('{{ URL::asset('frontend/img/slide_3.jpg')}}');"></div>
             <div class="info">
               <div>
                 <h1>Web<br />Development</h1>
@@ -167,7 +132,7 @@
     </div>
 
     <div class="page-content">
-      <section id="aboutus" class="content-section">
+      <section id="about-us" class="content-section">
         <div class="section-heading" data-aos="flip-left">
           <h1>About <em>Exponent</em></h1>
         </div>
@@ -204,7 +169,7 @@
         </div>
       </section>
 
-      <section id="services" class="content-section">
+      <section id="our-services" class="content-section">
         <div class="section-heading" data-aos="flip-right">
           <h1>Our <em>Services</em></h1>
         </div>
@@ -303,7 +268,7 @@
         </div>
       </section>
       
-      <section id="products" class="content-section">
+      <section id="our-products" class="content-section">
         <div class="section-heading" data-aos="flip-left">
           <h1>Our <em>Products</em></h1>
         </div>
@@ -367,7 +332,7 @@
         </div>
       </section>
 
-      <section id="clients" class="content-section">
+      <section id="our-clients" class="content-section">
         <div class="section-heading" data-aos="flip-right">
           <h1>Our <em>Clients</em></h1>
         </div>
@@ -435,7 +400,7 @@
         </div>
       </section>
 
-      <section id="partners" class="content-section">
+      <section id="our-partners" class="content-section">
         <div class="section-heading" data-aos="flip-left">
           <h1>Our <em>Partners</em></h1>
         </div>
@@ -501,7 +466,7 @@
         </div>
       </section>
       
-      <section id="contact" class="content-section">
+      <section id="contact-us" class="content-section">
         <div id="contact-content">
           <div class="section-heading" data-aos="flip-right">
             <h1>Contact <em>Exponent</em></h1>
@@ -602,17 +567,17 @@
               <div class="col-md-4">
                 <img src="https://img.icons8.com/doodle/64/000000/mail-contact.png">
                 <h4>Our Email</h4>
-                <p>info@exponentsolution.com</p>
+                <p>{{$setups->email}}</p>
               </div>
               <div class="col-md-4">
                 <img src="https://img.icons8.com/cute-clipart/64/000000/ringing-phone.png">
                 <h4>Call Us</h4>
-                <p><b>Phone:</b> +88 01752-817343</br><b>Tel:</b> +88 02-48810596</p>
+                <p><b>Phone:</b> {{$setups->phone}}</br><b>Tel:</b> {{$setups->landline}}</p>
               </div>
               <div class="col-md-4">
                 <img src="https://img.icons8.com/cute-clipart/64/000000/compass.png">
                 <h4>Find Us</h4>
-                <p>H 302, R 19/B, Mohakhali DOHS, Dhaka 1206</p>
+                <p>{{$setups->address}}</p>
               </div>
             </div>
           </div>

@@ -19,6 +19,9 @@
     <link href="{{ URL::asset('backend/assets/plugins/c3-master/c3.min.css')}}" rel="stylesheet">
     <link href="{{ URL::asset('backend/css/style.css')}}" rel="stylesheet">
     <link href="{{ URL::asset('backend/css/colors/green-dark.css')}}" id="theme" rel="stylesheet">
+    <link href="{{ URL::asset('backend/css/colors/blue-dark.css')}}" id="theme" rel="stylesheet">
+    <link href="{{ URL::asset('backend/css/colors/default-dark.css')}}" id="theme" rel="stylesheet">
+    <link href="{{ URL::asset('backend/css/colors/megna-dark.css')}}" id="theme" rel="stylesheet">
 </head>
 
 <body class="fix-header fix-sidebar card-no-border">
@@ -79,7 +82,7 @@
                 <div class="user-profile" style="background: url(../assets/images/background/user-info.jpg) no-repeat;">
                     <div class="profile-img"> <img src="../assets/images/users/profile.png" alt="user" /> </div>
                     <div class="profile-text"> <a href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown"
-                            role="button" aria-haspopup="true" aria-expanded="true">Markarn Doe</a>
+                            role="button" aria-haspopup="true" aria-expanded="true">Admin</a>
                         <div class="dropdown-menu animated flipInY"> <a href="#" class="dropdown-item"><i
                                     class="ti-user"></i>
                                 My Profile</a> <a href="#" class="dropdown-item"><i class="ti-wallet"></i> My
@@ -102,6 +105,9 @@
                         </li>
                         <li> <a class="waves-effect waves-dark" href="{{url('setup')}}" aria-expanded="false"><i
                             class="mdi mdi-tooltip-edit"></i>Website Setup</a>
+                        </li>
+                        <li> <a class="waves-effect waves-dark" href="{{url('categories')}}" aria-expanded="false"><i
+                            class="mdi mdi-notification-clear-all"></i>Categories</a>
                         </li>
                     </ul>
                 </nav>

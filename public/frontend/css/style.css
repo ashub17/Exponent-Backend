@@ -416,7 +416,7 @@ nav .active-section span {
   display: block;
 }
 
-.Modern-Slider .item-1 .image {
+/* .Modern-Slider .item-1 .image {
   background-image: url(../img/slide_1.jpg);
 }
 
@@ -426,7 +426,7 @@ nav .active-section span {
 
 .Modern-Slider .item-3 .image {
   background-image: url(../img/slide_3.jpg);
-}
+} */
 
 .Modern-Slider .PrevArrow:before {
   content: "\f104";
@@ -520,34 +520,34 @@ nav .active-section span {
   border: 1px solid transparent;
 }
 
-#aboutus {
+#about-us {
   padding-left: 60px;
   padding-right: 60px;
   padding-bottom: 80px;
   border-bottom: 1px solid #eee;
 }
 
-#aboutus .content-section {
+#about-us .content-section {
   display: inline-block;
   position: relative;
 }
 
 
 
-#aboutus .item {
+#about-us .item {
   text-align: left;
   position: relative;
   z-index: 10;
 }
 
-#aboutus .item .text-content {
+#about-us .item .text-content {
   padding-top: 20px;
   background-color: #fff;
   position: relative;
   z-index: 10;
 }
 
-#aboutus .item .text-content h4 {
+#about-us .item .text-content h4 {
   margin-top: 0px;
   margin-bottom: 5px;
   font-size: 21px;
@@ -556,7 +556,7 @@ nav .active-section span {
   letter-spacing: 0.5px;
 }
 
-#aboutus .item .text-content span {
+#about-us .item .text-content span {
   display: inline-block;
   font-size: 15px;
   font-weight: 600;
@@ -564,35 +564,35 @@ nav .active-section span {
   letter-spacing: 0.5px;
   margin-bottom: 12.5px;
 }
-#aboutus h4{
+#about-us h4{
   color: #45489a;
   font-style: initial;
 
 }
 
-#aboutus p{
+#about-us p{
   text-align: justify;
 }
 
-#products {
+#our-products {
   padding-left: 60px;
   padding-right: 60px;
   padding-bottom: 50px;
 }
 
-#products .masonry {
+#our-products .masonry {
   position: relative;
   width: 100%;
 }
 
-#services {
+#our-services {
   padding-left: 60px;
   padding-right: 60px;
   padding-bottom: 80px;
   background-color: #f4f4f4;
 }
 
-#services .tabs {
+#our-services .tabs {
   list-style: none;
   margin: 0px;
   padding: 0px;
@@ -611,7 +611,7 @@ nav .active-section span {
   padding: 0;
 }
 
-#services .tabs a {
+#our-services .tabs a {
   display: block;
   text-align: center;
   text-decoration: none;
@@ -624,15 +624,15 @@ nav .active-section span {
   transition: 0.5s;
 }
 
-#services .tabs a:hover {
+#our-services .tabs a:hover {
   color: #45489a;
 }
 
-#services .tabs .active:hover {
+#our-services .tabs .active:hover {
   color: #fff;
 }
 
-#services .tabs .active {
+#our-services .tabs .active {
   background-color: #45489a;
   color: #fff;
 }
@@ -648,13 +648,13 @@ nav .active-section span {
   clear: both;
 }
 
-#services .tabgroup ul {
+#our-services .tabgroup ul {
   padding: 0;
   margin: 0;
   list-style: none;
 }
 
-#services .tabgroup ul li {
+#our-services .tabgroup ul li {
   display: inline-block;
   text-align: left;
   margin-bottom: 10px;
@@ -662,23 +662,23 @@ nav .active-section span {
   border-bottom: 1px solid #ddd;
 }
 
-#services .tabgroup ul li:last-child {
+#our-services .tabgroup ul li:last-child {
   border-bottom: none;
   margin-bottom: 0px;
   padding-bottom: 10px;
 }
 
-#services .tabgroup ul li img {
+#our-services .tabgroup ul li img {
   float: left;
   margin-right: 30px;
   max-width: 100%;
   overflow: hidden;
 }
-#services .tabgroup ul li .text-content {
+#our-services .tabgroup ul li .text-content {
   display: inline;
 }
 
-#services .item .text-content h4 {
+#our-services .item .text-content h4 {
   padding-top: 7.5px;
   margin-top: 0px;
   margin-bottom: 5px;
@@ -688,36 +688,36 @@ nav .active-section span {
   letter-spacing: 0.5px;
 }
 
-#services .item .text-content p strong {
+#our-services .item .text-content p strong {
   color: #45489a;
   font-style: normal !important;
 }
 
-#clients {
+#our-clients {
   padding-left: 60px;
   padding-right: 60px;
   padding-bottom: 80px;
   background-color: #f4f4f4;
 }
 
-#partners {
+#our-partners {
   padding-left: 60px;
   padding-right: 60px;
   padding-bottom: 80px;
 }
 
-#contact {
+#contact-us {
   padding-top: 0px;
   background-color: #f4f4f4;
 }
 
-#contact-content {
+#contact-us-content {
   padding-top: 80px;
   padding-right: 60px;
   padding-left: 60px;
 }
 
-#contact input {
+#contact-us input {
   border-radius: 0px;
   padding-left: 15px;
   font-size: 13px;
@@ -732,7 +732,7 @@ nav .active-section span {
   margin-bottom: 25px;
 }
 
-#contact textarea {
+#contact-us textarea {
   border-radius: 0px;
   padding-left: 15px;
   padding-top: 10px;
@@ -749,7 +749,7 @@ nav .active-section span {
   margin-bottom: 25px;
 }
 
-#contact button {
+#contact-us button {
   font-size: 13px;
   border-radius: 0px;
   font-weight: 600;
@@ -767,23 +767,23 @@ nav .active-section span {
   transition: all 0.3s;
 }
 
-#contact button:hover {
+#contact-us button:hover {
   color: #232323;
   background-color: #f4f4f4;
 }
 
-#contact p{
+#contact-us p{
   text-align: center;
   padding: 0px;
   margin: 0px;
 }
-#contact h4{
+#contact-us h4{
   color: #0e76a8;
 }
-#contact img{
+#contact-us img{
   padding-top: 50px;
 }
-#contact .col-md-6 {
+#contact-us .col-md-6 {
   margin-bottom: 30px;
 }
 
@@ -888,44 +888,39 @@ nav .active-section span {
     position: relative;
   }
 
-  #aboutus {
+  #about-us {
     padding-left: 15px;
     padding-right: 15px;
   }
   
-  #aboutus .col-md-4 {
+  #about-us .col-md-4 {
     margin-bottom: 25px;
   }
 
-  #products {
+  #our-products {
     padding-left: 15px;
     padding-right: 15px;
   }
 
-  #video {
+  #our-clients {
     padding-left: 15px;
     padding-right: 15px;
   }
 
-  #clients {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-
-  #clients .tabs a {
+  #our-clients .tabs a {
     font-size: 13px;
   }
 
-  #clients .tabgroup ul li img {
+  #our-clients .tabgroup ul li img {
     float: none;
     width: 100%;
     margin-bottom: 15px;
   }
-  #clients .tabgroup ul li .text-content {
+  #our-clients .tabgroup ul li .text-content {
     display: block;
   }
 
-  #contact-content {
+  #contact-us-content {
     padding-left: 15px;
     padding-right: 15px;
   }

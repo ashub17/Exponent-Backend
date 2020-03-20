@@ -15,6 +15,16 @@ Route::get('/', 'frontController@index');
 
 Route::get('admin', 'adminController@admin');
 
-Route::get('setups', 'adminController@setups');
+Route::get('setup', 'adminController@setups');
 
 Route::post('addSettings','crudController@insertData');
+
+Route::get('categories', 'adminController@categories');
+
+Route::post('addCategory','crudController@insertData');
+
+Route::get('deleteCategory/{id}','adminController@deleteCategory');
+
+Route::get('editCategory/{id}','adminController@editCategory');
+
+Route::post('updateCategory/{id}','crudController@updateData');
