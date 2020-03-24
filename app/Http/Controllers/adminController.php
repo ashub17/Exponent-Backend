@@ -33,4 +33,21 @@ class adminController extends Controller
         $maindata=DB::table('categories')->where('id',$id)->first();
         return view('backend.edit.category',['data'=>$data, 'maindata'=>$maindata]);
     }
+
+    public function homes(){
+        $data=DB::table('homes')->get();
+        return view('backend.insert.homes',['data'=>$data]);
+    }
+
+    public function deleteHome($hid){
+        $data=DB::table('homes')->where('hid',$hid)->delete();
+        return redirect()->back();
+    }
+
+    public function editHome($hid){
+        $data=DB::table('homes')->get();
+        $maindata=DB::table('homes')->where('hid',$hid)->first();
+        return view('backend.edit.home',['data'=>$data, 'maindata'=>$maindata]);
+    }
+
 }

@@ -109,6 +109,9 @@
                         <li> <a class="waves-effect waves-dark" href="{{url('categories')}}" aria-expanded="false"><i
                             class="mdi mdi-notification-clear-all"></i>Categories</a>
                         </li>
+                        <li> <a class="waves-effect waves-dark" href="{{url('home')}}" aria-expanded="false"><i
+                            class="mdi mdi-home"></i>Homepage</a>
+                        </li>
                     </ul>
                 </nav>
             </div>

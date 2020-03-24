@@ -7,9 +7,8 @@
 
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    {{-- <link rel="apple-touch-icon" href="apple-touch-icon.png" /> --}}
-    <link rel="stylesheet" href="{{ URL::asset('frontend/css/bootstrap.min.css')}}" />
-    <link rel="stylesheet" href="{{ URL::asset('frontend/css/bootstrap-theme.min.css')}}" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="{{ URL::asset('frontend/css/light-box.css')}}" />
     <link rel="stylesheet" href="{{ URL::asset('frontend/css/owl-carousel.css')}}" />
@@ -88,46 +87,21 @@
 
     <div class="slider">
       <div class="Modern-Slider content-section" id="top">
-        <div class="item item-1">
+        @foreach ($homes as $key=>$home)
+        <div class="item item-{{++$key}}">
           <div class="img-fill">
-            <div class="image" style="background-image: url('{{ URL::asset('frontend/img/slide_1.jpg')}}');"></div>
+            <div class="image">
+              <img src="{{url('homes')}}/{{$home->image}}">
+            </div>
             <div class="info">
               <div>
-                <h1>Application<br />Development</h1>
-                <p>
-                  We create perfect application according to your need.
-                </p>
+                <h1>{{$home->title}}</h1>
+                <p>{{$home->subtitle}}</p>
               </div>
             </div>
           </div>
         </div>
-        <div class="item item-2">
-          <div class="img-fill">
-            <div class="image" style="background-image: url('{{ URL::asset('frontend/img/slide_2.jpg')}}');">
-            </div>
-            <div class="info">
-              <div>
-                <h1>IT<br />Infrustructure</h1>
-                <p>
-                  We work as a foundation by maintaining IT Infrustructure for your organization.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="item item-3">
-          <div class="img-fill">
-            <div class="image" style="background-image: url('{{ URL::asset('frontend/img/slide_3.jpg')}}');"></div>
-            <div class="info">
-              <div>
-                <h1>Web<br />Development</h1>
-                <p>
-                  We provide dynamic and e-commerce web solution for your organization or business.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+        @endforeach
       </div>
     </div>
 
@@ -596,7 +570,7 @@
           '<script src="{{ URL::asset('frontend/js/vendor/jquery-1.11.2.min.js')}}"><\/script>'
         );
     </script>
-    <script src="{{ URL::asset('frontend/js/vendor/bootstrap.min.js')}}"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="{{ URL::asset('frontend/js/plugins.js')}}"></script>
     <script src="{{ URL::asset('frontend/js/main.js')}}"></script>
     <script>
@@ -662,9 +636,6 @@
     <script>
       AOS.init();
     </script>
-    <script
-      src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"
-      type="text/javascript"
-    ></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   </body>
 </html>

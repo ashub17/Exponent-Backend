@@ -65,4 +65,38 @@ class crudController extends Controller
     	session::flash('message','Data updated successfully!!!');
         return redirect()->back();
     }
+
+    public function insertPageData(){
+        $data = Input::except('_token','submit');
+        print_r($data);
+        $table=decrypt($data['table']);
+        unset($data['table']);
+        if(!empty($data['image'])){
+            if(Input::hasFile('image')){
+              $data['image'] = $this->upload($data['image'],$table);
+            }
+        }
+
+    	$data['created_at'] = date('Y-m-d H:i:s');
+    	DB::table($table)->insert($data);
+    	session::flash('message','Data inserted successfully!!!');
+        return redirect()->back();
+    }
+
+    public function updatePageData(){
+        $data = Input::except('_token','submit');
+        print_r($data);
+        $table=decrypt($data['table']);
+        unset($data['table']);
+        if(!empty($data['image'])){
+            if(Input::hasFile('image')){
+              $data['image'] = $this->upload($data['image'],$table);
+            }
+        }
+
+    	$data['updated_at'] = date('Y-m-d H:i:s');
+    	DB::table($table)->where(key($data),reset($data))->update($data);
+    	session::flash('message','Data updated successfully!!!');
+        return redirect()->back();
+    }
 }

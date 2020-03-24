@@ -15,11 +15,9 @@ class CreateHomesTable extends Migration
     {
         Schema::create('homes', function (Blueprint $table) {
             $table->bigIncrements('hid');
-            $table->string('image')->nullable();
             $table->string('title');
             $table->string('subtitle');
-            $table->string('category');
-            $table->string('status');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

@@ -28,3 +28,13 @@ Route::get('deleteCategory/{id}','adminController@deleteCategory');
 Route::get('editCategory/{id}','adminController@editCategory');
 
 Route::post('updateCategory/{id}','crudController@updateData');
+
+Route::get('home', 'adminController@homes');
+
+Route::post('addHomes','crudController@insertPageData');
+
+Route::get('deleteHome/{hid}','adminController@deleteHome');
+
+Route::get('editHome/{hid}','adminController@editHome');
+
+Route::post('updateHome/{hid}','crudController@updatePageData');
