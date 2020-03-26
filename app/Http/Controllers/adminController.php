@@ -50,4 +50,36 @@ class adminController extends Controller
         return view('backend.edit.home',['data'=>$data, 'maindata'=>$maindata]);
     }
 
+    public function abouts(){
+        $data=DB::table('abouts')->get();
+        return view('backend.insert.abouts',['data'=>$data]);
+    }
+
+    public function deleteAbout($aid){
+        $data=DB::table('abouts')->where('aid',$aid)->delete();
+        return redirect()->back();
+    }
+
+    public function editAbout($aid){
+        $data=DB::table('abouts')->get();
+        $maindata=DB::table('abouts')->where('aid',$aid)->first();
+        return view('backend.edit.about',['data'=>$data, 'maindata'=>$maindata]);
+    }
+
+    public function services(){
+        $data=DB::table('services')->get();
+        return view('backend.insert.services',['data'=>$data]);
+    }
+
+    public function deleteService($sid){
+        $data=DB::table('services')->where('sid',$sid)->delete();
+        return redirect()->back();
+    }
+
+    public function editService($sid){
+        $data=DB::table('services')->get();
+        $maindata=DB::table('services')->where('sid',$sid)->first();
+        return view('backend.edit.service',['data'=>$data, 'maindata'=>$maindata]);
+    }
+
 }

@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="{{ URL::asset('frontend/css/light-box.css')}}" />
-    <link rel="stylesheet" href="{{ URL::asset('frontend/css/owl-carousel.css')}}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/css/lightbox.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
     <link rel="stylesheet" href="{{ URL::asset('frontend/css/style.css')}}" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet"/>
@@ -112,33 +112,14 @@
         </div>
         <div class="container-fluid padding">
           <div class="row padding">
+            @foreach ($abouts as $about)
             <div class="col-md-4" data-aos="fade-up">
               <div class="aboutpart">
-              <h4>Our Vision</h4>
-              <p>Exponent solution Limited is working keenly closer to the challenge as a one point solution provider in Bangladesh.
-                 Exponent Solution Limited has started upgrading its existing man power with internationally recognized certifications
-                  in every sector of its operation and in some special cases, acquired more experienced and professional people with excellent
-                   customer service support in mind.</p>
+              <h4>{{$about->title}}</h4>
+              <p>{{$about->description}}</p>
               </div>
             </div>
-            <div class="col-md-4" data-aos="fade-down">
-              <div class="aboutpart">
-              <h4>Top Professionals</h4>
-              <p> We are proud to announce that our company has in its possession the best computer engineers, programmers and 
-                most dynamic sales squad in our country concerning educational background and experience. Having adequate expertise, 
-                the company has earned the capability to serve the local need of IT with proper support & maintenance services. 
-                These made the company as one of the leading IT Company of the country.</p>
-              </div>
-            </div>
-            <div class="col-md-4" data-aos="fade-up">
-              <div class="aboutpart">
-              <h4>Customer Satisfaction</h4>
-              <p> The services offered by Exponent Solution Limited is regarded by the customers as skillful and friendly 
-              because they are executed by professionals bearing in mind the importance of a customer as well as due to the 
-              competence of their technological knowledge. Our aim is to give the customer an efficient and reliable system 
-              for maximum productivity as well as lowest possible expenditure of maintenance. </p>
-              </div>
-            </div>
+            @endforeach
           </div>
         </div>
       </section>
@@ -153,27 +134,21 @@
               <section id="first-tab-group" class="tabgroup">
                 <div id="tab1">
                   <ul>
+                    @foreach ($services as $service)
                     <li>
                       <div class="item" data-aos="flip-right">
                         <div class="col-md-5">
-                        <img src="{{ URL::asset('frontend/img/Software Dev.jpg')}}"/>
+                        <img src="{{url('services')}}/{{$service->image}}"/>
                         </div>
                         <div class="col-md-7">
                           <div class="text-content">
-                            <h4>Software Development</h4>
-                            <p>
-                              We are one of the renowned and trusted name delivering customized Software ERP development services. Our Software and ERP products includes:</br>
-                              <strong>Educational Institute Management System (EIMS)</strong></br>
-                              <strong>Alumni Management System</strong></br>
-                              <strong>Hospital Management System</strong></br>
-                              <strong>HR and payroll Software Approval Management System</strong></br>
-                              <strong>Accounting Management System</strong></br>
-                              <strong>ERP Solutions</strong></br>
-                            </p>
+                            <h4>{{$service->title}}</h4>
+                            <p>{!!$service->description!!}</p>
                           </div>
                         </div>
                       </div>
                     </li>
+                    @endforeach
                     <li>
                       <div class="item" data-aos="flip-left">
                         <div class="col-md-5">
@@ -563,11 +538,11 @@
       </section>
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
       window.jQuery ||
         document.write(
-          '<script src="{{ URL::asset('frontend/js/vendor/jquery-1.11.2.min.js')}}"><\/script>'
+          '<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>'
         );
     </script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

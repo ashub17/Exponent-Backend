@@ -38,3 +38,23 @@ Route::get('deleteHome/{hid}','adminController@deleteHome');
 Route::get('editHome/{hid}','adminController@editHome');
 
 Route::post('updateHome/{hid}','crudController@updatePageData');
+
+Route::get('about', 'adminController@abouts');
+
+Route::post('addAbout','crudController@insertPageData');
+
+Route::get('deleteAbout/{id}','adminController@deleteAbout');
+
+Route::get('editAbout/{aid}','adminController@editAbout');
+
+Route::post('updateAbout/{aid}','crudController@updatePageData');
+
+Route::get('service', 'adminController@services');
+
+Route::post('addServices','crudController@insertPageData');
+
+Route::get('deleteService/{sid}','adminController@deleteService');
+
+Route::get('editService/{sid}','adminController@editService');
+
+Route::post('updateService/{sid}','crudController@updatePageData');

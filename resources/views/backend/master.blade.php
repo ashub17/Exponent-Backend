@@ -112,6 +112,12 @@
                         <li> <a class="waves-effect waves-dark" href="{{url('home')}}" aria-expanded="false"><i
                             class="mdi mdi-home"></i>Homepage</a>
                         </li>
+                        <li> <a class="waves-effect waves-dark" href="{{url('about')}}" aria-expanded="false"><i
+                            class="mdi mdi-home"></i>About Us</a>
+                        </li>
+                        <li> <a class="waves-effect waves-dark" href="{{url('service')}}" aria-expanded="false"><i
+                            class="mdi mdi-home"></i>Services</a>
+                        </li>
                     </ul>
                 </nav>
             </div>
