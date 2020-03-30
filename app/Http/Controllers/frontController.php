@@ -16,12 +16,18 @@ class frontController extends Controller
         $homes=DB::table('homes')->get();
         $abouts=DB::table('abouts')->get();
         $services=DB::table('services')->get();
+        $products=DB::table('products')->get();
+        $clients=DB::table('clients')->where('category','client')->get();
+        $partners=DB::table('clients')->where('category','partner')->get();
         return view ('frontend.index',[
             'setups'=>$setups,
             'cats'=>$cats,
             'homes'=>$homes,
             'abouts'=>$abouts,
             'services'=>$services,
+            'products'=>$products,
+            'clients'=>$clients,
+            'partners'=>$partners,
         ]);
     }
 }

@@ -12,16 +12,14 @@ File: scss
 */
 @import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700");
 /*Theme Colors*/
-@import url(../css/icons/font-awesome/css/fontawesome-all.css);
-@import url(../css/icons/simple-line-icons/css/simple-line-icons.css);
-@import url(../css/icons/weather-icons/css/weather-icons.min.css);
+@import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css");
 @import url(../css/icons/linea-icons/linea.css);
 @import url(../css/icons/themify-icons/themify-icons.css);
-@import url(../css/icons/flag-icon-css/flag-icon.min.css);
-@import url(../css/icons/material-design-iconic-font/css/materialdesignicons.min.css);
+@import url("https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.0.45/css/materialdesignicons.min.css");
 @import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700");
-@import url(../css/spinners.css);
-@import url(../css/animate.css);
+@import url(../css/spinners.min.css);
+@import url("https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css");
 .preloader {
   width: 100%;
   height: 100%;

@@ -58,3 +58,20 @@ Route::get('deleteService/{sid}','adminController@deleteService');
 Route::get('editService/{sid}','adminController@editService');
 
 Route::post('updateService/{sid}','crudController@updatePageData');
+
+Route::get('product', 'adminController@products');
+
+Route::post('addProducts','crudController@insertPageData');
+
+Route::get('deleteProduct/{pid}','adminController@deleteProduct');
+
+Route::get('editProduct/{pid}','adminController@editProduct');
+
+Route::post('updateProduct/{pid}','crudController@updatePageData');
+
+Route::get('client', 'adminController@clients');
+
+Route::post('addClients','crudController@insertPageData');
+
+Route::get('deleteClient/{cpid}','adminController@deleteClient');
+Auth::routes();

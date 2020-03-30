@@ -149,66 +149,6 @@
                       </div>
                     </li>
                     @endforeach
-                    <li>
-                      <div class="item" data-aos="flip-left">
-                        <div class="col-md-5">
-                        <img src="{{ URL::asset('frontend/img/Web Development.png')}}"/>
-                        </div>
-                        <div class="col-md-7">
-                          <div class="text-content">
-                            <h4>Web Development</h4>
-                            <p>
-                              We provide our valuable clients their need of web applications such as:</br>
-                              <strong>Static Website</strong></br>
-                              <strong>Dynamic Website</strong></br>
-                              <strong>E-Commerce Solution</strong></br>
-                              <strong>Portal Website</strong></br>
-                              <strong>Community Website</strong></br>
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="item" data-aos="flip-right">
-                        <div class="col-md-5">
-                        <img src="{{ URL::asset('frontend/img/it infrustructure.jpg')}}"/>
-                        </div>
-                        <div class="col-md-7">
-                          <div class="text-content">
-                            <h4>IT Infrustructure</h4>
-                            <p>
-                              Our IT Infrustructure development includes:</br>
-                              <strong>Data Center</strong></br>
-                              <strong>Network Integration, configuration & commissioning</strong></br>
-                              <strong>Unified Communication System</strong></br>
-                              <strong>DBA Services</strong></br>
-                              <strong>Disaster Recovery Solutions</strong></br>
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="item" data-aos="flip-left">
-                        <div class="col-md-5">
-                        <img src="{{ URL::asset('frontend/img/IT Support.jpg')}}"/>
-                        </div>
-                        <div class="col-md-7">
-                          <div class="text-content">
-                            <h4>IT Support</h4>
-                            <p>
-                              We provide IT Support services such as:</br>
-                              <strong>Application Development</strong></br>
-                              <strong>Application Maintenance</strong></br>
-                              <strong>Data Management</strong></br>
-                              <strong>System Integration</strong></br>
-                              <strong>IT Consulting</strong></br>
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
                   </ul>
                 </div>
               </section>
@@ -223,60 +163,20 @@
         </div>
         <div class="section-content">
           <div class="row">
+            @foreach ($products as $product)
             <div class="column" data-aos="flip-up">
               <div class="card" >
                 <img
                   class="card-img-top"
-                  src="https://img.icons8.com/cotton/64/000000/management.png"
+                  src="{{url('products')}}/{{$product->image}}"
                 />
-                <h5 class="card-title">Club</br>Management Application</h5>
+                <h5 class="card-title"><strong>{{$product->title}}</strong></h5>
                 <div class="card-body">
-                  <a href="Club Management System/index.html" target="__blank" class="btn btn-primary">View Demo</a>
+                  <a href="{{$product->link}}" target="__blank" class="btn btn-primary">View Demo</a>
                 </div>
               </div>
             </div>
-
-            <div class="column" data-aos="flip-down">
-              <div class="card">
-                <img
-                  class="card-img-top"
-                  src="https://img.icons8.com/cute-clipart/64/000000/apartment.png"
-                />
-                <h5 class="card-title">Apartment </br>Management Application</h5>
-                <div class="card-body">
-                  
-                  <a href="#contact" class="btn btn-primary">View Demo</a>
-                </div>
-              </div>
-            </div>
-
-            <div class="column" data-aos="flip-up">
-              <div class="card">
-                <img
-                  class="card-img-top"
-                  src="https://img.icons8.com/cotton/64/000000/courier-lorry.png"
-                />
-                <h5 class="card-title">Courier </br>Management Application</h5>
-                <div class="card-body">
-                  
-                  <a href="#contact" class="btn btn-primary">View Demo</a>
-                </div>
-              </div>
-            </div>
-
-            <div class="column" data-aos="flip-down">
-              <div class="card">
-                <img
-                  class="card-img-top"
-                  src="https://img.icons8.com/officel/64/000000/valet-parking.png"
-                />
-                <h5 class="card-title">Parking </br>Management Application</h5>
-                <div class="card-body">
-                  
-                  <a href="#contact" class="btn btn-primary">View Demo</a>
-                </div>
-              </div>
-            </div>
+            @endforeach
           </div>
         </div>
       </section>
@@ -288,64 +188,39 @@
         <div class="section-content" data-aos="zoom-in">
           <div class="row">
             <div id="carousel" class="carousel slide" data-ride="carousel" data-type="multi" data-interval="2500">
-                <div class="carousel-inner">
+              <div class="carousel-inner">
+                @foreach ($clients as $key=>$client)
+                  @if ($key==0)
                   <div class="item active">
                     <div class="carousel-col">
-                      <div>
-                      <img src="img/clients/1.jpg" height="150 px" width="auto"/>
-                    </div>
+                      <img src="{{url('clients')}}/{{$client->image}}" width="200 px" height="auto"/>
+                      <h4>{{$client->title}}</h4>
                     </div>
                   </div>
+                  @else
                   <div class="item">
                     <div class="carousel-col">
-                      <img src="img/clients/2.jpg" height="150 px" width="auto"/>
+                      <img src="{{url('clients')}}/{{$client->image}}" width="200 px" height="auto"/>
+                      <h4>{{$client->title}}</h4>
                     </div>
                   </div>
-                  <div class="item">
-                    <div class="carousel-col">
-                      <img src="img/clients/3.png" height="150 px" width="auto"/>
-                    </div>
-                  </div>
-                  <div class="item">
-                    <div class="carousel-col">
-                      <img src="img/clients/4.jpg" height="150 px" width="auto"/>
-                    </div>
-                  </div>
-                  <div class="item">
-                    <div class="carousel-col">
-                      <img src="img/clients/5.jpg" height="150 px" width="auto"/>
-                    </div>
-                  </div>
-                  <div class="item">
-                    <div class="carousel-col">
-                      <img src="img/clients/6.jpg" height="150 px" width="auto"/>
-                    </div>
-                  </div>
-                  <div class="item">
-                    <div class="carousel-col">
-                      <img src="img/clients/7.jpg" height="150 px" width="auto"/>
-                    </div>
-                  </div>
-                  <div class="item">
-                    <div class="carousel-col">
-                      <img src="img/clients/8.jpg" height="150 px" width="auto"/>
-                    </div>
-                  </div>
-                </div>
-                <div class="left carousel-control">
-                  <a href="#carousel" role="button" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                  </a>
-                </div>
-                <div class="right carousel-control">
-                  <a href="#carousel" role="button" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                  </a>
-                </div>
+                  @endif
+                @endforeach
+              </div>
+              <div class="left carousel-control">
+                <a href="#carousel" role="button" data-slide="prev">
+                  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+              </div>
+              <div class="right carousel-control">
+                <a href="#carousel" role="button" data-slide="next">
+                  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
               </div>
             </div>
+          </div>
         </div>
       </section>
 
@@ -356,48 +231,25 @@
         <div class="section-content" data-aos="zoom-in">
           <div class="row">
             <div id="carousel1" class="carousel slide" data-ride="carousel" data-type="multi" data-interval="2500">
-                <div class="carousel-inner">
+              <div class="carousel-inner">
+                @foreach ($partners as $key=>$partner)
+                  @if ($key==0)
                   <div class="item active">
                     <div class="carousel-col">
-                      <img src="img/partners/1.jpg" width="150 px" height="auto"/>
+                      <img src="{{url('clients')}}/{{$partner->image}}" width="200 px" height="auto"/>
+                      <h4>{{$partner->title}}</h4>
                     </div>
                   </div>
+                  @else
                   <div class="item">
                     <div class="carousel-col">
-                      <img src="img/partners/2.jpg" width="150 px" height="auto"/>
+                      <img src="{{url('clients')}}/{{$partner->image}}" width="200 px" height="auto"/>
+                      <h4>{{$partner->title}}</h4>
                     </div>
                   </div>
-                  <div class="item">
-                    <div class="carousel-col">
-                      <img src="img/partners/3.jpg" width="150 px" height="auto"/>
-                    </div>
-                  </div>
-                  <div class="item">
-                    <div class="carousel-col">
-                      <img src="img/partners/4.png" width="150 px" height="auto"/>
-                    </div>
-                  </div>
-                  <div class="item">
-                    <div class="carousel-col">
-                      <img src="img/partners/5.png" width="150 px" height="auto"/>
-                    </div>
-                  </div>
-                  <div class="item">
-                    <div class="carousel-col">
-                      <img src="img/partners/6.jpg" width="150 px" height="auto"/>
-                    </div>
-                  </div>
-                  <div class="item">
-                    <div class="carousel-col">
-                      <img src="img/partners/7.png" width="150 px" height="auto"/>
-                    </div>
-                  </div>
-                  <div class="item">
-                    <div class="carousel-col">
-                      <img src="img/partners/8.png" width="150 px" height="auto"/>
-                    </div>
-                  </div>
-                </div>
+                  @endif
+                @endforeach
+              </div>
                 <div class="left carousel-control">
                   <a href="#carousel1" role="button" data-slide="prev">
                     <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -427,14 +279,7 @@
                   <div class="row">
                     <div class="col-md-6">
                       <fieldset>
-                        <input
-                          name="name"
-                          type="text"
-                          class="form-control"
-                          id="name"
-                          placeholder="Your name..."
-                          required=""
-                        />
+                        <input name="name" type="text" class="form-control" id="name" placeholder="Your name..." required=""/>
                       </fieldset>
                     </div>
                     <div class="col-md-6">
@@ -610,6 +455,7 @@
     </script>
     <script>
       AOS.init();
+      window.addEventListener('load', AOS.refresh);
     </script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   </body>

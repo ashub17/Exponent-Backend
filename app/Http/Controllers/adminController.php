@@ -10,6 +10,7 @@ class adminController extends Controller
 {
     public function __construct(){
 
+        $this->middleware('auth');
     }
     public function admin(){
         return view('backend.index');
@@ -80,6 +81,32 @@ class adminController extends Controller
         $data=DB::table('services')->get();
         $maindata=DB::table('services')->where('sid',$sid)->first();
         return view('backend.edit.service',['data'=>$data, 'maindata'=>$maindata]);
+    }
+
+    public function products(){
+        $data=DB::table('products')->get();
+        return view('backend.insert.products',['data'=>$data]);
+    }
+
+    public function deleteProduct($pid){
+        $data=DB::table('products')->where('pid',$pid)->delete();
+        return redirect()->back();
+    }
+
+    public function editProduct($pid){
+        $data=DB::table('products')->get();
+        $maindata=DB::table('products')->where('pid',$pid)->first();
+        return view('backend.edit.product',['data'=>$data, 'maindata'=>$maindata]);
+    }
+
+    public function clients(){
+        $data=DB::table('clients')->get();
+        return view('backend.insert.clients',['data'=>$data]);
+    }
+
+    public function deleteClient($cpid){
+        $data=DB::table('clients')->where('cpid',$cpid)->delete();
+        return redirect()->back();
     }
 
 }
